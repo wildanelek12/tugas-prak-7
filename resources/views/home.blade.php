@@ -119,12 +119,16 @@ $(document).ready(function(){
                     <div class="col-sm-12"><h2 align="center">Data Barang </h2></div>
                 </div>
                 <div class="row">
-                	<div class="col-sm-8"></div>
+                	<div class="col-sm-6"></div>
                     <div class="col-sm-4">
                         <div class="search-box">
                             <i class="material-icons">&#xE8B6;</i>
-                            <input type="text" class="form-control" placeholder="Search&hellip;">
+                            <input type="text" class="form-control" id="input-search"placeholder="Search&hellip;">
+                      
                         </div>
+                    </div>
+                    <div class="col-sm-2">
+                               <button class="btn btn-primary" id="btn-search">Search</button>
                     </div>
                 </div>
             </div>
@@ -177,6 +181,16 @@ $(document).ready(function(){
             </div>
         </div>
     </div>  
-</div>   
+</div>
+<script>
+    $(document).ready(function(){
+        $("#btn-search").click(function () {
+            document.location = "/search/"+$("#input-search").val();
+        })
+
+
+    })
+    
+</script> 
 </body>
 </html>

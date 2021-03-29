@@ -13,7 +13,8 @@ use App\Http\Controllers\BarangController;
 |
 */
 
-Route::get('/home', [BarangController::class,'show']);
-Route::get('/delete', [BarangController::class,'delete']);
-Route::get('/insert', [BarangController::class,'insert']);
+Route::get('/home', [BarangController::class,'showData']);
+Route::get('/delete', [BarangController::class,'deleteData']);
+Route::get('/insert', [BarangController::class,'insertData']);
 Route::get('/sortNama', [BarangController::class,'sortNama']);
+Route::get('/search/{barang}', [BarangController::class,'searchName']);
