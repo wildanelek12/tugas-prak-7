@@ -44,7 +44,14 @@ class BarangController extends Controller
         return view ('home',["isInsert" => $this->isInsert]);
     }
     public function sortNama(){
-
+        $result = Barang::orderBy('nama_barang','ASC')->get();
+           $this->isInsert = true;
+        return view ('home',["shows"=>$result ,"isInsert" => $this->isInsert]);
+    }
+    public function sortJumlah(){
+        $result = Barang::orderBy('jumlah_barang','ASC')->get();
+           $this->isInsert = true;
+        return view ('home',["shows"=>$result ,"isInsert" => $this->isInsert]);
     }
     public function searchName($barang)
     {
