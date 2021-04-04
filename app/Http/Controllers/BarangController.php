@@ -59,5 +59,31 @@ class BarangController extends Controller
          $this->isInsert = true;
         return view ('home',["shows"=>$result ,"isInsert" => $this->isInsert]);
     }
+    public function deleteItem($barang)
+    {
+        $result = Barang::where('nama_barang','LIKE',"%{$barang}%")->delete();
+         $this->isInsert = true;
+        $show = Barang::all();
+        return view ('home',["shows"=>$show ,"isInsert" => $this->isInsert]);
+    }
+     public function detailItem($barang)
+    {
+        $result = Barang::where('nama_barang','LIKE',"%{$barang}%")->first();
+        $nama_barang =  $result->nama_barang;
+        $jumlah_barang =  $result->jumlah_barang;
+        $harga =  $result->harga_barang;
+        $filename=null;
+        if ($nama_barang=='shampoo') {
+            $filename='shampo.png';
+        }else if ($nama_barang=='sikat gigi') {
+             $filename='gigi.jpg';
+        }else if ($nama_barang=='sikat lantai') {
+             $filename='sikatlantai.jpg';
+        }else{
+            $filename='sabun.png';
+        }
+        return view ('detail_page',["nama_barang"=>$nama_barang ,"jumlah_barang"=>$jumlah_barang,"harga" => $harga,"filename"=>$filename]);
+
+    }
 
 }

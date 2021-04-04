@@ -19,3 +19,8 @@ Route::get('/insert', [BarangController::class,'insertData']);
 Route::get('/sortNama', [BarangController::class,'sortNama']);
 Route::get('/sortJumlah', [BarangController::class,'sortJumlah']);
 Route::get('/search/{barang}', [BarangController::class,'searchName']);
+Route::get('/deleteItem/{nama_barang}', [BarangController::class,'deleteItem']);
+Route::get('/detailItem/{nama_barang}', [BarangController::class,'detailItem']);
+Route::get('/', function () {
+     return view ('detail_page');
+});

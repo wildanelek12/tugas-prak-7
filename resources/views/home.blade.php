@@ -157,6 +157,8 @@ $(document).ready(function(){
 	                        <th>Nama Barang </th>
 	                        <th>Jumlah Barang</th>
 	                        <th>Harga Barang </th>
+                            <th> </th>
+                            <th> </th>
 
 	                    </tr>
 	                </thead>
@@ -169,8 +171,8 @@ $(document).ready(function(){
                                 <td> {{$barangss->nama_barang}}</td>
                                 <td> {{$barangss->jumlah_barang}}</td>
                                 <td> {{$barangss->harga_barang}}</td>
-
-
+                                <td> <a href="/deleteItem/{{$barangss->nama_barang}}"><button class="btn btn-primary">Delete</button></td>
+                             <td> <a href="/detailItem/{{$barangss->nama_barang}}"><button class="btn btn-primary">Detail</button></td>
                             </tr>
                             <?php $count++; ?>
                             @endforeach
