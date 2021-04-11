@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\InputController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,11 @@ Route::get('/sortJumlah', [BarangController::class,'sortJumlah']);
 Route::get('/search/{barang}', [BarangController::class,'searchName']);
 Route::get('/deleteItem/{nama_barang}', [BarangController::class,'deleteItem']);
 Route::get('/detailItem/{nama_barang}', [BarangController::class,'detailItem']);
+Route::get('/proses-form', [InputController::class,'inputData']);
 Route::get('/', function () {
-     return view ('detail_page');
+     return view ('home');
+});
+
+Route::get('/input-form', function () {
+     return view ('input_form');
 });

@@ -138,7 +138,7 @@ $(document).ready(function(){
            			<div class="group-btn">
 	           			<a href="/home"><button type="button" class="btn btn-primary btn-md btn-block" >Home</button></a>
 
-	           			<a href="/insert"><button type="button"  class="btn btn-primary btn-md btn-block" {{$isInsert?'disabled':''}}>Insert</button></a>
+	           			<a href="/input-form"><button type="button"  class="btn btn-primary btn-md btn-block">Insert</button></a>
 
 
 
